@@ -42,12 +42,13 @@ to go
   if ticks >= 500 [ stop ]
   set proba-addict-to-healthy (( addicts-willingness-level - addicts-retirement-level) + 100) / 100
   set proba-healthy-to-addict healthy-temptation-level
+  move-healthy
   tick
 end
 
 to move-healthy
   ask healthy [
-    right random 360
+    face min-one-of addicts [ distance myself ]
     forward 1
   ]
 end
