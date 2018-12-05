@@ -60,7 +60,7 @@ to move-addicts
   ask addicts [
     if (retirement > 25) and (retirement < 75) [
       if not any? other addicts-here[
-      face min-one-of other addicts [ distance myself ]
+      face min-one-of oaddicts [ distance myself ]
       forward 0.5
       ]
     ]
