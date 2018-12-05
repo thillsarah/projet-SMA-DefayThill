@@ -57,7 +57,6 @@ to move-healthy
     ]
     [
       setxy random-xcor random-ycor
-      forward 0.1
     ]
 
 
