@@ -49,10 +49,18 @@ end
 
 to move-healthy
   ask healthy [
-    if not any? addicts-here[
-      face min-one-of addicts [ distance myself ]
-      forward 0.1
+    ifelse help > 50 [
+      if not any? addicts-here[
+        face min-one-of addicts [ distance myself ]
+        forward 0.1
+      ]
     ]
+    [
+      setxy random-xcor random-ycor
+
+    ]
+
+
   ]
 end
 
@@ -60,7 +68,7 @@ to move-addicts
   ask addicts [
     if (retirement > 25) and (retirement < 75) [
       if not any? other addicts-here[
-      face min-one-of oaddicts [ distance myself ]
+      face min-one-of other addicts [ distance myself ]
       forward 0.5
       ]
     ]
@@ -70,7 +78,10 @@ to move-addicts
       forward 0.5
       ]
     ]
-    ;if retirement > 75 []
+    ;if retirement > 75 [
+    ;  face nobody
+    ;  forward 0.5
+    ;]
 
   ]
 end
@@ -186,7 +197,7 @@ number-addicts
 number-addicts
 0
 100
-68.0
+95.0
 1
 1
 NIL
@@ -269,7 +280,7 @@ healthy-help-level
 healthy-help-level
 0
 100
-22.0
+24.0
 1
 1
 NIL
@@ -284,7 +295,7 @@ healthy-temptation-level
 healthy-temptation-level
 0
 100
-50.0
+51.0
 1
 1
 NIL
