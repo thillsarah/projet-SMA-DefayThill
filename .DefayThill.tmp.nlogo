@@ -77,6 +77,7 @@ to move-addicts
       forward 0.5
       ]
     ]
+<<<<<<< Updated upstream
     ;if retirement > 75 [
     ;  face nobody
     ;  forward 0.5
